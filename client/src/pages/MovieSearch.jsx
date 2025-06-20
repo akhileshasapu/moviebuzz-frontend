@@ -50,9 +50,15 @@ function MovieSearch() {
         <div className="moviecard">
           <div className="postercard">
             <img src={movie.Poster} alt="" />
-            <button>
-              <strong>Watch Traile</strong>r
-            </button>
+            
+            <a
+  href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.Title + " trailer")}`}
+  target="_blank"
+  rel="noopener noreferrer"
+><button>
+  Watch Trailer   </button>
+</a>
+         
           </div>
           <div className="detailcard">
             <div className="top">
