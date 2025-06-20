@@ -559,6 +559,10 @@ height: 18vh;
   width: 8vw;
   height: 6vh;
   border-radius: 5vw;
+  cursor:pointer;
+}
+.postercard button:hover {
+  color: #1ec8ff;
 }
 
 .moviesearchpage .postercard img {
