@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const { login } = useAuth();
+    const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const res = await fetch("https://movierbuzz-backend.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -41,7 +43,7 @@ function Login() {
     placeholder="Password"
     onChange={(e) => setForm({ ...form, password: e.target.value })}
   />
-  <button type="submit">Login</button>
+  <button disabled={loading} type="submit">{loading ? "Logging in..." : "Login"}</button>
 </form>
 </div>
    </div>
